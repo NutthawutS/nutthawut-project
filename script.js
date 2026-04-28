@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
 const featureBlocks = document.querySelectorAll('.feature-block');
 const visualStates = document.querySelectorAll('.visual-state');
 
-// ใช้ Intersection Observer เพื่อเช็คว่าผู้ใช้เลื่อน Scroll มาถึง Feature Block ข้อไหน
+// ใช้ Intersection Observer เพื่อเช็คว่าผู้ใช้เลื่อน  Scroll มาถึง Feature Block ข้อไหน
 const observerOptions = {
     root: null,
     rootMargin: '-40% 0px -40% 0px', // ตรวจจับเมื่อ Element อยู่ตรงกลางๆ จอ
