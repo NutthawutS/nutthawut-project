@@ -1,10 +1,11 @@
 <html lang="en"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hinkling | Weekly Report Automation</title>
+    <title>Hinkling | Weekly Report Generator</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Navbar -->
     <nav>
         <div class="nav-content">
             <div class="logo">Hinkling.</div>
@@ -12,104 +13,109 @@
         </div>
     </nav>
 
+    <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content fade-up">
-            <h1>Sheets to Slides.<br><span class="gradient-text">In Seconds.</span></h1>
-            <p class="subtitle">Turning chaotic raw data into C-Level ready presentations.</p>
+            <h1>Zero-Code Reporting.<br>Unlocked.</h1>
+            <p class="subtitle">Transforming 4 hours of manual media reporting into a 30-second automated workflow.</p>
         </div>
     </section>
 
+    <!-- Apple-style Feature Showcase (Sticky Scroll) -->
     <section class="showcase-container">
+        <!-- ฝั่งข้อความที่จะเลื่อนไปเรื่อยๆ -->
         <div class="text-column">
             
-            <!-- Step 1 -->
             <div class="feature-block" data-step="1">
-                <h3>01. Raw Data in Google Sheets</h3>
-                <h2>Dump the chaos.</h2>
-                <p>Just drop your raw exports from Meta, TikTok, and YouTube into Google Sheets. The system automatically detects platforms and unifies the schema without manual formatting.</p>
+                <h3>01. Universal Data Ingestion</h3>
+                <h2>Drop the files.<br>We handle the rest.</h2>
+                <p>No more manual copy-pasting. The system automatically detects platforms (Meta, TikTok, YouTube, DV360), maps columns intelligently, and aggregates raw data into a single unified schema.</p>
             </div>
 
-            <!-- Step 2 -->
             <div class="feature-block" data-step="2">
-                <h3>02. Validation &amp; KPI Engine</h3>
-                <h2>Clean Data. Clear Business Impact.</h2>
-                <p>The built-in logic scans for taxonomy errors (wrong dates, invalid objectives) and auto-calculates business metrics like CPV and CPC. Red cells tell you what to fix; Green cells mean you're ready.</p>
+                <h3>02. Smart Taxonomy Engine</h3>
+                <h2>Error-proof your data governance.</h2>
+                <p>A built-in AI-logic validator scans every campaign name. It instantly flags critical errors—wrong date formats, invalid objectives, or missing KPI pricing—and highlights them in a Green/Red intuitive UI for quick fixing.</p>
             </div>
 
-            <!-- Step 3 -->
             <div class="feature-block" data-step="3">
-                <h3>03. Auto-Generate to Google Slides</h3>
-                <h2>The Magic Transition.</h2>
-                <p>With one click, perfectly clean data is injected into your Google Slides template. Campaigns are grouped by date and product, fully formatted and ready to present.</p>
+                <h3>03. KPI Auto-Calculation</h3>
+                <h2>From Raw Data to Business Metrics.</h2>
+                <p>Stop calculating CPV, CPC, or CPFV manually. The engine evaluates performance against planned benchmarks instantly, categorizing results into 'Above Average' to 'Below Average' for executive insights.</p>
+            </div>
+
+            <div class="feature-block" data-step="4">
+                <h3>04. Auto-Slide Generation</h3>
+                <h2>Pixel-perfect slides,<br>instantly generated.</h2>
+                <p>The magic happens here. The system injects the processed data directly into Google Slides templates. It creates table of contents, groups campaigns by date, and even sorts appendix slides by product group automatically.</p>
             </div>
 
         </div>
 
+        <!-- ฝั่ง Graphic ที่จะถูกล็อคไว้ (Sticky) และเปลี่ยนภาพไปตาม Step -->
         <div class="visual-column">
             <div class="visual-sticky">
+                <!-- UI จำลอง (จำลองหน้าต่างโปรแกรม) -->
                 <div class="mock-window">
-                    
+                    <div class="window-header">
+                        <span class="dot red"></span>
+                        <span class="dot yellow"></span>
+                        <span class="dot green"></span>
+                    </div>
                     <div class="window-body" id="dynamic-visual">
-                        
-                        <!-- VISUAL 1: Mock Google Sheets (Raw Data) -->
+                        <!-- Content จะถูกเปลี่ยนด้วย JS -->
                         <div class="visual-state active" id="vis-1">
-                            <div class="app-header sheets">
-                                <div class="app-title">📊 RAW_IMPORT</div>
-                            </div>
-                            <div class="sheet-grid messy">
-                                <div class="s-row header"><span>Campaign Name</span><span>Spend</span><span>Impr.</span></div>
-                                <div class="s-row"><span>Uniqlo_Jacket_YT...</span><span>5000</span><span>120K</span></div>
-                                <div class="s-row"><span>Uniqlo_Pants_TT...</span><span>3000</span><span>80K</span></div>
-                                <div class="s-row"><span>Meta_Awareness_01</span><span>1500</span><span>200K</span></div>
-                            </div>
+                            <div class="code-line">Processing Meta_Ads_Raw.csv... [OK]</div>
+                            <div class="code-line">Processing TikTok_Data.xlsx... [OK]</div>
+                            <div class="code-line">Mapping 45 columns to Standard Schema...</div>
                         </div>
-
-                        <!-- VISUAL 2: Mock Google Sheets (Validation Log) -->
                         <div class="visual-state" id="vis-2">
-                            <div class="app-header sheets">
-                                <div class="app-title">📊 VALIDATION_LOG</div>
-                            </div>
-                            <div class="sheet-grid clean">
-                                <div class="s-row header"><span>Campaign Name</span><span>Taxonomy</span><span>KPI (CPV)</span></div>
-                                <div class="s-row"><span class="cell-green">Uniqlo_Jacket_YT...</span><span class="cell-green">VALID</span><span>0.04 THB</span></div>
-                                <div class="s-row"><span class="cell-green">Uniqlo_Pants_TT...</span><span class="cell-green">VALID</span><span>0.03 THB</span></div>
-                                <div class="s-row"><span class="cell-red">Meta_Awareness_01</span><span class="cell-red">INVALID</span><span>N/A</span></div>
+                            <div class="alert-box red">❌ CRITICAL: Platform missing</div>
+                            <div class="alert-box red">❌ Date invalid: 051225-310126</div>
+                            <div class="alert-box green">✅ Fixed Campaign Name Applied</div>
+                        </div>
+                        <div class="visual-state" id="vis-3">
+                            <div class="metric-grid">
+                                <div class="metric"><small>Obj: VDO Views</small><br>CPV: 0.12 THB <span class="badge green">Above Avg</span></div>
+                                <div class="metric"><small>Obj: Traffic</small><br>CPC: 4.50 THB <span class="badge yellow">Average</span></div>
                             </div>
                         </div>
-
-                        <!-- VISUAL 3: Mock Google Slides -->
-                        <div class="visual-state" id="vis-3">
-                            <div class="app-header slides">
-                                <div class="app-title">🟨 Weekly_Report_Slides</div>
-                            </div>
-                            <div class="slide-workspace">
-                                <div class="slide-canvas">
-                                    <div class="slide-title">Uniqlo's post - Jackets</div>
-                                    <div class="slide-content-boxes">
-                                        <div class="content-box">
-                                            <div class="box-img"></div>
-                                            <div class="box-text">YT VDO Views<br>Spend: 5,000<br>CPV: 0.04 <span style="color:green;">(Above Avg)</span></div>
-                                        </div>
-                                        <div class="content-box">
-                                            <div class="box-img"></div>
-                                            <div class="box-text">TT VDO Views<br>Spend: 3,000<br>CPV: 0.03 <span style="color:green;">(Above Avg)</span></div>
-                                        </div>
-                                        <div class="content-box empty">No Campaign</div>
-                                    </div>
+                        <div class="visual-state" id="vis-4">
+                            <div class="slide-mockup">
+                                <div class="slide-header">Uniqlo's post</div>
+                                <div class="slide-boxes">
+                                    <div class="s-box"></div>
+                                    <div class="s-box"></div>
+                                    <div class="s-box"></div>
                                 </div>
                             </div>
+                            <div class="code-line highlight">SUCCESS: 45 Slides Generated</div>
                         </div>
-
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Business Impact Section -->
     <section class="impact">
         <div class="fade-up text-center">
-            <h2>From Reporting to Strategy</h2>
-            <p class="subtitle">By automating the Sheets-to-Slides pipeline, the media team saves 100+ man-hours, shifting focus entirely to Business Outcomes.</p>
+            <h2>The Business Impact</h2>
+            <p class="subtitle">Empowering the media planning team to focus on strategy, not copy-pasting.</p>
+            <div class="impact-grid">
+                <div class="impact-card">
+                    <h1>100+</h1>
+                    <p>Man-hours saved per month</p>
+                </div>
+                <div class="impact-card">
+                    <h1>100%</h1>
+                    <p>Taxonomy &amp; Data Accuracy</p>
+                </div>
+                <div class="impact-card">
+                    <h1>C-Level</h1>
+                    <p>Ready-to-present format</p>
+                </div>
+            </div>
         </div>
     </section>
 
